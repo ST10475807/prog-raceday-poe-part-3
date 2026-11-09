@@ -16,7 +16,7 @@ public class ResultsController(RaceDayContext db) : ControllerBase
     private int UserId =>
         int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-    // Returns results belonging to the signed-in Participant.
+    // Returns results belonging to the signed-in Participant
     [HttpGet("results/me")]
     [Authorize(Roles = "Participant")]
     public async Task<IActionResult> Mine()
